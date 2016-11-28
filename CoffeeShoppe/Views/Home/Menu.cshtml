@@ -6,20 +6,26 @@
 
 <h2>Menu</h2>
 @*@ViewBag.Message
-@ViewBag.SheilaSays
-@TempData["MikeSays"]
-@Session["Steak"]
-@Session["Barney"]*@
+    @ViewBag.SheilaSays
+    @TempData["MikeSays"]
+    @Session["Steak"]
+    @Session["Barney"]*@
 
 @Model.Count
 
 <div>Description Price Quantity</div>
-<div>Coffee</div><div>
-    3 lbs. Columbian $15.00 1
+<div>Coffee</div>
+@foreach (var n in Model)
+{
+    <div>
+
+        @n.Description @n.Price @n.Availability
     </div>
-<div>Other Drinks</div>
-<div>Food</div>
-<div>Miscellaneous</div>
-<input type = button value="Go to Cart"/>
-<div>Total</div>
+}
+    
+        <div>Other Drinks</div>
+        <div>Food</div>
+        <div>Miscellaneous</div>
+        <input type=button value="Go to Cart" />
+        <div>Total</div>
 

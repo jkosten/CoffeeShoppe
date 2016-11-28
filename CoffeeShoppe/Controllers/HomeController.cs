@@ -39,7 +39,8 @@ namespace CoffeeShoppe.Controllers
             //Session["Barney"] = "I heart you";
 
             CoffeeShoppeProductsEntities MyDatabase = new CoffeeShoppeProductsEntities();
-            return View(MyDatabase.MenuItems );
+            var ourData = MyDatabase.MenuItems.ToList();
+            return View(ourData);
         }
     }
 }
