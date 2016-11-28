@@ -1,5 +1,7 @@
-﻿using System;
+﻿using CoffeeShoppe.Models;
+using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -30,12 +32,14 @@ namespace CoffeeShoppe.Controllers
 
         public ActionResult Menu()
         {
-            ViewBag.Message = "Your Menu Page";
-            ViewBag.SheilaSays = "Hi";
-            TempData["MikeSays"] = "Yo Wad Up";
-            Session.Add("Steak", "coffee");
-            Session["Barney"] = "I heart you";
-            return View();
+            //ViewBag.Message = "Your Menu Page";
+            //ViewBag.SheilaSays = "Hi";
+            //TempData["MikeSays"] = "Yo Wad Up";
+            //Session.Add("Steak", "coffee");
+            //Session["Barney"] = "I heart you";
+
+            CoffeeShoppeProductsEntities MyDatabase = new CoffeeShoppeProductsEntities();
+            return View(MyDatabase.MenuItems );
         }
     }
 }
