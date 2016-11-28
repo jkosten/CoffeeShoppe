@@ -61,4 +61,7 @@
   <ItemGroup>
     <Build Include="MenuItems.sql" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="ItemSampleData.sql" />
+  </ItemGroup>
 </Project>
