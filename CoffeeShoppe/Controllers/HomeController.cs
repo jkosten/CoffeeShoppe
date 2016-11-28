@@ -25,6 +25,17 @@ namespace CoffeeShoppe.Controllers
             ViewBag.Message = "Your contact page.";
 
             return View();
+
+        }
+
+        public ActionResult Menu()
+        {
+            ViewBag.Message = "Your Menu Page";
+            ViewBag.SheilaSays = "Hi";
+            TempData["MikeSays"] = "Yo Wad Up";
+            Session.Add("Steak", "coffee");
+            Session["Barney"] = "I heart you";
+            return View();
         }
     }
 }
